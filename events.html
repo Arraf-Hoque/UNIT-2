@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+
+	<title>Events</title>
+</head>
+<style>
+    #testContainer{
+    widht:auto;
+    height:auto;
+    position:relative;
+    background-color: black;
+}
+#testAnimation{
+    width:50px;
+    height:50px;
+    position:absolute;
+    background-color:blueviolet;
+}
+</style>
+<body>
+    <div class="header">
+    <div class="row-container">
+        <a class="thespianStage" href="thespian_Home.html"><h1>Thespian Stage</h1></a>
+        <div class="box-last">
+           <h1>
+            <a class="headerRight" href="drink_Menu.html">Drink Menu</a>  
+            <a class="headerRight" href="events.html">Events</a>
+            <a class="headerRight" href="photo_Gallery.html">Photo Gallery</a>
+            <a class="headerRight" href="https://na.finalfantasyxiv.com/"> FFXIV</a>
+            </h1>
+        </div>
+    </div> 
+    </div><button onclick="myMove()">Click Me</button>
+    <div id="testContainer">
+    <div id="testAnimation"></div>
+    
+    <script>
+        var id = null;
+        function myMove() {
+        var elem = document.getElementById("testAnimation");  
+        elem.style.opacity = "0";
+        var pos = 0;
+        var opp = 0;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (pos == 350) {
+            clearInterval(id);
+            } else {
+            pos++;
+            opp++;
+            elem.style.opacity = opp / 100;
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px';
+            }
+        }
+        }
+    </script>
+
+
+</body>
+</html>
